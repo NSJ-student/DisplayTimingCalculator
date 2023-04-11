@@ -156,9 +156,13 @@ namespace DisplayTimingCalculator_.Net4._8
             rtbScript.AppendText(String.Format("rem_ww2 2 40 01d1 {0:X2}  # VS low (DSB)\n", (vs_low >> 8) & 0xFF));
             rtbScript.AppendText(String.Format("rem_ww2 2 40 01d2 {0:X2}  # VS low (LSB) {1}\n\n", (vs_low >> 0) & 0xFF, vs_low));
 
-            rtbScript.AppendText(String.Format("rem_ww2 2 40 01d3 00  # VS edge to the rising edge of the first HS (MSB)\n"));
-            rtbScript.AppendText(String.Format("rem_ww2 2 40 01d4 01  # VS edge to the rising edge of the first HS (DSB)\n"));
-            rtbScript.AppendText(String.Format("rem_ww2 2 40 01d5 D5  # VS edge to the rising edge of the first HS (LSB)\n\n"));
+            int vs_edge_to_rising_edge_of_first_hs = (vsync + vbp) * htotal;
+            rtbScript.AppendText(String.Format("rem_ww2 2 40 01d3 {0:X2}  # VS edge to the rising edge of the first HS (MSB)\n",
+                                                (vs_edge_to_rising_edge_of_first_hs >> 16) & 0xFF));
+            rtbScript.AppendText(String.Format("rem_ww2 2 40 01d4 {0:X2}  # VS edge to the rising edge of the first HS (DSB)\n",
+                                                (vs_edge_to_rising_edge_of_first_hs >> 8) & 0xFF));
+            rtbScript.AppendText(String.Format("rem_ww2 2 40 01d5 {0:X2}  # VS edge to the rising edge of the first HS (LSB) {1}\n",
+                                                (vs_edge_to_rising_edge_of_first_hs >> 0) & 0xFF, vs_edge_to_rising_edge_of_first_hs));
 
             int hs_high = hsync;
             int hs_low = htotal - hsync;

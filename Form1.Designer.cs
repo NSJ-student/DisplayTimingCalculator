@@ -73,7 +73,7 @@ namespace DisplayTimingCalculator_.Net4._8
             this.txtHtotal.Name = "txtHtotal";
             this.txtHtotal.Size = new System.Drawing.Size(98, 21);
             this.txtHtotal.TabIndex = 0;
-            this.txtHtotal.Text = "1650";
+            this.txtHtotal.Text = "1652";
             // 
             // rtbScript
             // 
@@ -248,7 +248,7 @@ namespace DisplayTimingCalculator_.Net4._8
             this.txtPclk.Name = "txtPclk";
             this.txtPclk.Size = new System.Drawing.Size(98, 21);
             this.txtPclk.TabIndex = 8;
-            this.txtPclk.Text = "37130625";
+            this.txtPclk.Text = "37170000";
             // 
             // label9
             // 
@@ -373,7 +373,7 @@ namespace DisplayTimingCalculator_.Net4._8
             this.txtMultiply.Name = "txtMultiply";
             this.txtMultiply.Size = new System.Drawing.Size(98, 21);
             this.txtMultiply.TabIndex = 10;
-            this.txtMultiply.Text = "1";
+            this.txtMultiply.Text = "2";
             // 
             // Form1
             // 
